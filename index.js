@@ -14,13 +14,13 @@ class Farm {
 
 
 
-  function Book(name, year) {
-    this.name = name
-    this.year = '(' + year + ')'
-  }
+//   function Book(name, year) {
+//     this.name = name
+//     this.year = '(' + year + ')'
+//   }
   
-  let j = 'jurgis'
+//   let j = 'jurgis'
 
-  let myBook = new Book(j, 1991);
+//   let myBook = new Book(j, 1991);
 
-  console.log(myBook);
+//   console.log(myBook);
