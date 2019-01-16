@@ -1,4 +1,4 @@
-const {Wheat, Sugarcane, Crop} = require('./crops')
+const {Wheat, Sugarcane, Crop, Farm} = require('./crops')
 
 
 test('The Wheat class can calculate a yield', () => {
@@ -49,4 +49,21 @@ test('Sugarcane class calculates the proper costs value', () => {
   test('Wheat class calculates the proper costs value', () => {
     const wheat = new Wheat(123)
     expect(wheat.getCosts()).toBe(41820)
+  })
+
+  test('We can add a crop to the Farm ', ()=> {
+      const farm = new Farm('TEST_NAME')
+      farm.addCrop(new Wheat(100))
+  })
+
+  test('The income of an empty farm is 0', () => {
+    const farm = new Farm('TEST_NAME')
+    expect(farm.calculateIncome()).toBe(0)
+  })
+
+  test('The income of a 100 Wheat + 100 Sugarcane farm is X', ()=>{
+      const farm = new Farm('TEST_NAME')
+      farm.addCrop(new Wheat(100))
+      farm.addCrop(new Sugarcane(100))
+      expect(farm.calculateIncome()).toBeCloseTo(1918.37, 1)
   })

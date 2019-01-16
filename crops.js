@@ -1,10 +1,19 @@
 class Farm {
-    constructor (name) {
+    constructor(name) {
         this.name = name
         this.crops = []
     }
     addCrop(crop) {
         this.crops.push(crop)
+    }
+    calculateIncome() {
+        // using the getYieldEuros on all the crop instances
+        // that are in this.crops
+        return this.crops
+            .map(crop => crop.getYieldinEuros())
+            // so in this case the 'sum' variable will be
+            // sugarcane, wheat etc
+            .reduce((sum, item) => sum + item, 0)
     }
 }
 
@@ -52,5 +61,9 @@ const sugarCane = new Sugarcane(456);
 console.log(sugarCane.getCosts());
 
 
-module.exports = { Wheat, Sugarcane, Crop, Farm }
-
+module.exports = {
+    Wheat,
+    Sugarcane,
+    Crop,
+    Farm
+}
