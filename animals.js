@@ -5,7 +5,6 @@ class Animal {
         this.age = age
     }
     getValueInEuros() {
-        // we need the weight and the price
         return this.getWeightInKg() / this.price
     }
 }
@@ -28,7 +27,7 @@ class Horse extends Animal {
         this.maxWeight = 1000
     }
     getWeightInKg() {
-        return math.Min(this.maxWeight, this.age * 1.5)
+        return Math.min(this.maxWeight, this.age * 1.7)
     }
 }
 
@@ -39,9 +38,16 @@ class Cow extends Animal {
         this.maxWeight = 1200
     }
     getWeightInKg() {
-        return math.Min(this.maxWeight, this.age * 1.5)
+        return Math.min(this.maxWeight, this.age * 1.5)
     }
 
+}
+
+module.exports = {
+    Animal,
+    Cow,
+    Horse,
+    Pig
 }
 
 let pig = new Pig(10)
